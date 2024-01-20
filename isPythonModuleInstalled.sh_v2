@@ -1,6 +1,11 @@
 #!/bin/bash
-if python3 -c "import ${1}" 1>/dev/null 2>/dev/nll  ; then
+if ! command -v python3  1>/dev/null 2>/dev/null  ; then
+  echo "python3 is not installed "
+  exit  1
+fi 
+if python3 -c "import ${1}" 1>/dev/null 2>/dev/null  ; then
   echo "The ${1} module is installed"
   exit 0
 fi 
 echo "The ${1} module is not installed"
+exit 1
