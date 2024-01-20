@@ -1,6 +1,6 @@
 #!/bin/bash
 moduleName=${1}
-python3 -c "import ${moduleName}" 1>/dev/null 2>/dev/nll
+python3 -c "import ${moduleName}" 1>/dev/null 2>/dev/null
 if [[ $? -eq 0 ]] ; then
   echo "The ${moduleName} module is installed"
 else
